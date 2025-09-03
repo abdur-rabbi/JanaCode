@@ -3,7 +3,7 @@
 import java.util.*;
 
 public class ATMapp {
-    String name, accNum, password, accNumInput, passwordInput; 
+    String name, accNum, password, accNumInput, passwordInput;
     int balance = 1000, depositAmount, withdrawAmount;
 
     Scanner input = new Scanner(System.in);
@@ -19,7 +19,7 @@ public class ATMapp {
         int accLen = String.valueOf(accNum).length();
         int passLen = String.valueOf(password).length();
 
-        if ( accLen < 6 || accLen > 19 || passLen < 6 || passLen > 19) {
+        if (accLen < 6 || accLen > 19 || passLen < 6 || passLen > 19) {
             throw new IllegalArgumentException(
                     "Account number and password must be positive numbers and 6 to 19 digits long.");
         }
@@ -57,13 +57,13 @@ public class ATMapp {
                     break;
                 case 2:
                     System.out.print("Enter deposit amount: ");
-                    depositAmount = input.nextInt();
+                    float depositAmount = input.nextInt();
                     balance += depositAmount;
                     System.out.println("Deposited successfully! Your new balance is $: " + balance);
                     break;
                 case 3:
                     System.out.print("Enter withdraw amount: ");
-                    withdrawAmount = input.nextInt();
+                    float withdrawAmount = input.nextInt();
                     if (withdrawAmount <= balance) {
                         balance -= withdrawAmount;
                         System.out.println("Withdrawn successfully! Your new balance is $: " + balance);
